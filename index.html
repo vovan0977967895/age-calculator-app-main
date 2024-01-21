@@ -3,9 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">  
   <title>Frontend Mentor | Age calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,23 +19,66 @@
   </style>
 </head>
 <body>
-
-  Day
-  DD
-
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+<main>
+  <div class="wrapper">
+    <div class="container">
+      <div class="calculator-content">
+        <div class="calculator-content__input">
+          <div class="day">
+            <div class="day__title">
+              <h2>DAY</h2>
+            </div>
+            <input class="day__input" type="text" placeholder="DD">
+            <div class="day__error"></div>
+          </div>
+          <div class="month">
+            <div class="month__title">
+              <h2>MONTH</h2>
+            </div>
+            <input class="month__input" type="text" placeholder="MM">
+            <div class="month__error"></div>
+          </div>
+          <div class="year">
+            <div class="year__title">
+              <h2>YEAR</h2>
+            </div>
+            <input class="year__input" type="text" placeholder="YYYY">
+            <div class="year__error"></div>
+          </div>
+        </div>
+        <div class="line"></div>
+        <button class="btn__input">
+          <img src="assets/images/icon-arrow.svg" alt="arrow">
+        </button>
+        <div class="calculator-content__out">
+          <div class="years__out">
+            <div class="years__num">--</div>
+            <div class="years__title">
+              <p>years</p>
+            </div>
+          </div>
+          <div class="months__out">
+            <div class="months__num">--</div>
+            <div class="months__title">
+              <p>months</p>
+            </div>
+          </div>
+          <div class="days__out">
+            <div class="days__num">--</div>
+            <div class="days__title">
+              <p>days</p>
+            </div>
+          </div>
+        </div>
+      </div>    
+    </div>
   </div>
+</main>
+  <div class="footer">
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Volodimir</a>.
+    </div>
+  </div>  
 </body>
 </html>
