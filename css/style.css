@@ -73,3 +73,47 @@ h2{
    border: 2px solid hsl(259, 100%, 65%);
  
 }
+.button__content{
+   display: flex;
+   position: relative;
+}
+.line{
+   width: 640px;
+   margin-top: 50px;
+   border-top: 2px solid hsl(0, 0%, 86%);
+
+   
+}
+.btn__input{
+   border-radius: 50%;
+   background-color: hsl(259, 100%, 65%);
+   border: none;
+   width: 100px;
+   height: 100px;
+   cursor: pointer;
+}
+.btn__input:hover{
+   background-color: black;
+}
+.btn__input:active{
+   background-color: hsl(259, 100%, 65%);
+
+}
+.years__out, .months__out, .days__out{
+   display: flex;
+}
+.years__num, .months__num, .days__num{
+   font-size: 80px;
+   color: hsl(259, 100%, 65%);
+   font-family: 'Poppins', sans-serif;
+   font-weight: 700;
+   font-style: italic;
+}
+.years__title, .months__title, .days__title{
+   font-size: 60px;
+   color: hsl(0, 0%, 8%);
+   font-family: 'Poppins', sans-serif;
+   font-weight: 700;
+   font-style: italic;
+   margin-left: 10px;
+}
