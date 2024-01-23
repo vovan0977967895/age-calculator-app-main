@@ -42,7 +42,9 @@ function r(){
         
       }else{document.querySelector('.year__error').innerHTML = '';
       }
-
+      if (months === NaN){
+        document.querySelector('.month__error').innerHTML = 'Must be in the past';
+      }
     
    }
    oldOut(birthday);
