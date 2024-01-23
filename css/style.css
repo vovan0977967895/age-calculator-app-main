@@ -80,9 +80,7 @@ h2{
 .line{
    width: 640px;
    margin-top: 50px;
-   border-top: 2px solid hsl(0, 0%, 86%);
-
-   
+   border-top: 2px solid hsl(0, 0%, 86%);   
 }
 .btn__input{
    border-radius: 50%;
@@ -119,4 +117,47 @@ h2{
 }
 .red{
    color: red;
+   font-size: 14px;
+   margin-top: 10px;
 }
+.red-title{
+   color: red;
+}
+@media  (max-width: 865px){
+   .calculator-content{
+      background-color: hsl(0, 0%, 100%);
+      width: 340px;
+      height: 490px;
+      border-radius: 20px 20px 90px 20px;
+      padding: 25px;
+   }
+   .years__num, .months__num, .days__num{
+      font-size: 50px;      
+   }
+   .years__title, .months__title, .days__title{
+      font-size: 50px;
+      margin-left: 10px;
+      
+   }
+   .btn__input{
+      border-radius: 50%;      
+      width: 60px;
+      height: 60px;
+      margin-top: 24px;
+      margin-left: -160px;
+   }
+   #day__input, #month__input, #year__input {
+      width: 68px;
+      height: 50px;
+      margin-right: 25px;
+      font-size: 16px;
+      
+   }
+   .line{
+      width: 265px;
+      margin-top: 50px;
+      margin-bottom: 70px;
+      border-top: 2px solid hsl(0, 0%, 86%);   
+   }
+}
+   

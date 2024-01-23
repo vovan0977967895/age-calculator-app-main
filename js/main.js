@@ -56,5 +56,15 @@ btnInput.onclick = r
    }
       */
 
+   /*  if (isNaN(years) == true){
+         document.querySelector('.year__error').innerHTML = 'Must be a valid year';
+        document.querySelector('.year__error').classList.add('red');
+        document.querySelector('.h2-year').classList.add('red-title');
+        document.querySelector('.years__num').innerHTML = '--'
+        document.querySelector('.months__num').innerHTML = '--'
+        document.querySelector('.days__num').innerHTML = '--'        
+      }else{document.querySelector('.year__error').innerHTML = '';
+      document.querySelector('.h2-year').classList.remove('red-title');
+      } */
 
     
