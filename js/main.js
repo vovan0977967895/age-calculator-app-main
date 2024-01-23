@@ -1,21 +1,23 @@
 'use strict'
 window.addEventListener('DOMContentLoaded', () =>{
-   let dayInput = +document.querySelector('.day__input').value;
-   let monthInput = +document.querySelector('.month__input').value;
-   let yearInput = +document.querySelector('.year__input').value;
-   let btnInput = document.querySelector('.btn__input')
-   let birthday = '';
-   if (monthInput > 0 && monthInput < 10  ){
-      birthday = `${yearInput}-0${monthInput}-${dayInput}`;
-   }else{
-      birthday = `${yearInput}-${monthInput}-${dayInput}`;
-   }
-   console.log(birthday);  
+   console.log('Hello');
    console.log(new Date());
-   
+
+   let btnInput = document.querySelector('.btn__input');   
    document.querySelector('.years__num').innerHTML = '--'
    document.querySelector('.months__num').innerHTML = '--'
    document.querySelector('.days__num').innerHTML = '--'
+
+function r(){
+   let dayInput = +document.getElementById('day__input').value;
+   let monthInput = +document.getElementById('month__input').value;
+   let yearInput = +document.getElementById('year__input').value;
+   let birthday = '';
+   birthday = `${yearInput}-${monthInput}-${dayInput}`;
+   console.log(dayInput ,monthInput, yearInput, birthday );
+   
+   
+   
    function oldOut (input){
       let days = 0;
       let months = 0;
@@ -40,16 +42,19 @@ window.addEventListener('DOMContentLoaded', () =>{
          'days': days     
       }
    }
-   btnInput.onclick = function() {
-      oldOut(birthday);
-   }  
-    
-});
+   oldOut(birthday);
+   
+}
+btnInput.onclick = r
+});  
+   
+ /*   let birthday = '';
+   if (monthInput > 0 && monthInput < 10  ){
+      birthday = `${yearInput}-0${monthInput}-${dayInput}`;
+   }else{
+      birthday = `${yearInput}-${monthInput}-${dayInput}`;
+   }
+      */
 
 
-
-
-
-
-    
     
