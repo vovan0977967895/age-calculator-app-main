@@ -2,7 +2,6 @@
 window.addEventListener('DOMContentLoaded', () =>{
    console.log('Hello');
    console.log(new Date());
-
    let btnInput = document.querySelector('.btn__input');   
    document.querySelector('.years__num').innerHTML = '--'
    document.querySelector('.months__num').innerHTML = '--'
@@ -12,10 +11,10 @@ function r(){
    let dayInput = +document.getElementById('day__input').value;
    let monthInput = +document.getElementById('month__input').value;
    let yearInput = +document.getElementById('year__input').value;
+   
    let birthday = '';
    birthday = `${yearInput}-${monthInput}-${dayInput}`;
    console.log(dayInput ,monthInput, yearInput, birthday );
-   
    
    
    function oldOut (input){
@@ -34,30 +33,8 @@ function r(){
       console.log(years);
       console.log(months);
       console.log(days);
-      
-      return {
-         'total': t,
-         'years': years,
-         'months': months,
-         'days': days     
-      }
-   }
-   oldOut(birthday);
-   
-}
-btnInput.onclick = r
-});  
-   
- /*   let birthday = '';
-   if (monthInput > 0 && monthInput < 10  ){
-      birthday = `${yearInput}-0${monthInput}-${dayInput}`;
-   }else{
-      birthday = `${yearInput}-${monthInput}-${dayInput}`;
-   }
-      */
-
-   /*  if (isNaN(years) == true){
-         document.querySelector('.year__error').innerHTML = 'Must be a valid year';
+      if(t < 0){
+        document.querySelector('.year__error').innerHTML = 'Must be in the past';
         document.querySelector('.year__error').classList.add('red');
         document.querySelector('.h2-year').classList.add('red-title');
         document.querySelector('.years__num').innerHTML = '--'
@@ -65,6 +42,32 @@ btnInput.onclick = r
         document.querySelector('.days__num').innerHTML = '--'        
       }else{document.querySelector('.year__error').innerHTML = '';
       document.querySelector('.h2-year').classList.remove('red-title');
-      } */
-
+      }
+     
+      if (isNaN(months) == true){
+        document.querySelector('.month__error').innerHTML = 'Must be a valid month';
+        document.querySelector('.month__error').classList.add('red');
+        document.querySelector('.h2-month').classList.add('red-title');
+        document.querySelector('.years__num').innerHTML = '--'
+        document.querySelector('.months__num').innerHTML = '--'
+        document.querySelector('.days__num').innerHTML = '--'
+      }else{document.querySelector('.month__error').innerHTML = '';
+      document.querySelector('.h2-month').classList.remove('red-title');
+   }
+   if (isNaN(days) == true){
+      document.querySelector('.day__error').innerHTML = 'Must be a valid day';
+      document.querySelector('.day__error').classList.add('red');
+      document.querySelector('.h2-day').classList.add('red-title');
+      document.querySelector('.years__num').innerHTML = '--'
+      document.querySelector('.months__num').innerHTML = '--'
+      document.querySelector('.days__num').innerHTML = '--'
+    }else{document.querySelector('.day__error').innerHTML = '';
+    document.querySelector('.h2-day').classList.remove('red-title');
+ }
     
+   }
+   oldOut(birthday);
+   
+}
+btnInput.onclick = r
+}); 
