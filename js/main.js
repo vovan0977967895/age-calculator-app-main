@@ -11,10 +11,19 @@ function r(){
    let dayInput = +document.getElementById('day__input').value;
    let monthInput = +document.getElementById('month__input').value;
    let yearInput = +document.getElementById('year__input').value;
+   if(dayInput > 28 && monthInput === 2 && (yearInput % 4 !== 0)){
+      document.querySelector('.day__error').innerHTML = 'Must be a valid day';
+      document.querySelector('.day__error').classList.add('red');
+      document.querySelector('.h2-day').classList.add('red-title');
+      document.querySelector('.years__num').innerHTML = '--'
+      document.querySelector('.months__num').innerHTML = '--'
+      document.querySelector('.days__num').innerHTML = '--'
+   }
+      let birthday = '';
+      birthday = `${yearInput}-${monthInput}-${dayInput}`;
+      console.log(dayInput ,monthInput, yearInput, birthday );
    
-   let birthday = '';
-   birthday = `${yearInput}-${monthInput}-${dayInput}`;
-   console.log(dayInput ,monthInput, yearInput, birthday );
+
    
    
    function oldOut (input){
