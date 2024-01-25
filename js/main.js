@@ -1,32 +1,53 @@
 'use strict'
 window.addEventListener('DOMContentLoaded', () =>{
-   console.log('Hello');
    console.log(new Date());
    let btnInput = document.querySelector('.btn__input');   
-   document.querySelector('.years__num').innerHTML = '--'
-   document.querySelector('.months__num').innerHTML = '--'
-   document.querySelector('.days__num').innerHTML = '--'
+   
 
 function r(){
    let dayInput = +document.getElementById('day__input').value;
    let monthInput = +document.getElementById('month__input').value;
    let yearInput = +document.getElementById('year__input').value;
-   if(dayInput > 28 && monthInput === 2 && (yearInput % 4 !== 0)){
-      document.querySelector('.day__error').innerHTML = 'Must be a valid day';
-      document.querySelector('.day__error').classList.add('red');
-      document.querySelector('.h2-day').classList.add('red-title');
-      document.querySelector('.years__num').innerHTML = '--'
-      document.querySelector('.months__num').innerHTML = '--'
-      document.querySelector('.days__num').innerHTML = '--'
-   }
-      let birthday = '';
-      birthday = `${yearInput}-${monthInput}-${dayInput}`;
-      console.log(dayInput ,monthInput, yearInput, birthday );
+   
    
 
+   let birthday = '';
    
+   if(dayInput > 30 && monthInput === 4 || monthInput === 6 || monthInput === 9 || monthInput === 11)  {
+      console.log('error');         
+      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
+      document.querySelector('.day__error').classList.add('red')
+      document.querySelector('.h2-day').classList.add('red-title')
+      document.querySelector('.years__num').innerHTML = '--'
+      document.querySelector('.months__num').innerHTML = '--'
+      document.querySelector('.days__num').innerHTML = '--' 
+      return
+   } 
+      if  (dayInput > 29 && monthInput === 2 && (yearInput % 4 === 0 )){
+         console.log('error')
+         document.querySelector('.day__error').innerHTML = 'Must be a valid date'
+         document.querySelector('.day__error').classList.add('red')
+         document.querySelector('.h2-day').classList.add('red-title')
+         document.querySelector('.years__num').innerHTML = '--'
+         document.querySelector('.months__num').innerHTML = '--'
+         document.querySelector('.days__num').innerHTML = '--' 
+         return
+   }  
+      if(dayInput > 28 && monthInput == 2 && (yearInput % 4 !== 0 ) ){
+         console.log('error')
+         document.querySelector('.day__error').innerHTML = 'Must be a valid date'
+         document.querySelector('.day__error').classList.add('red')
+         document.querySelector('.h2-day').classList.add('red-title')
+         document.querySelector('.years__num').innerHTML = '--'
+         document.querySelector('.months__num').innerHTML = '--'
+         document.querySelector('.days__num').innerHTML = '--'
+         return
+   }else{           
+      birthday = `${yearInput}-${monthInput}-${dayInput}`;
+      console.log(dayInput ,monthInput, yearInput, birthday );
+   }   
    
-   function oldOut (input){
+      function oldOut (input){
       let days = 0;
       let months = 0;
       let years = 0;
