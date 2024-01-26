@@ -1,104 +1,68 @@
 'use strict'
 window.addEventListener('DOMContentLoaded', () =>{
    console.log(new Date());
-   let btnInput = document.querySelector('.btn__input');   
-   
+   let btnInput = document.querySelector('.btn__input');     
 
 function r(){
    let dayInput = +document.getElementById('day__input').value;
    let monthInput = +document.getElementById('month__input').value;
-   let yearInput = +document.getElementById('year__input').value;
-   
-   
+   let yearInput = +document.getElementById('year__input').value;   
 
    let birthday = '';
 
    birthday = `${yearInput}-${monthInput}-${dayInput}`;
    console.log(dayInput ,monthInput, yearInput, birthday );
-      
-      if  (dayInput > 29 && monthInput === 2 && (yearInput % 4 === 0 )){
-         console.log('error')
+
+   function errorDay () {
          document.querySelector('.day__error').innerHTML = 'Must be a valid date'
          document.querySelector('.day__error').classList.add('red')
          document.querySelector('.h2-day').classList.add('red-title')
          document.querySelector('.years__num').innerHTML = '--'
          document.querySelector('.months__num').innerHTML = '--'
          document.querySelector('.days__num').innerHTML = '--' 
-         return birthday = '';
-   } else{
+   }
+
+   function errorDayRemove () {
       document.querySelector('.day__error').innerHTML = '';
       document.querySelector('.h2-day').classList.remove('red-title');
       document.querySelector('.day__error').classList.remove('red');
+   }
+      
+      if  (dayInput > 29 && monthInput === 2 && (yearInput % 4 === 0 )){
+         errorDay ()
+         return birthday = '';
+   } else{
+      
    }; 
       if(dayInput > 28 && monthInput == 2 && (yearInput % 4 !== 0 ) ){
-         console.log('error')
-         document.querySelector('.day__error').innerHTML = 'Must be a valid date'
-         document.querySelector('.day__error').classList.add('red')
-         document.querySelector('.h2-day').classList.add('red-title')
-         document.querySelector('.years__num').innerHTML = '--'
-         document.querySelector('.months__num').innerHTML = '--'
-         document.querySelector('.days__num').innerHTML = '--'
+         errorDay ()
          return birthday = '';
    } else{
-      document.querySelector('.day__error').innerHTML = '';
-      document.querySelector('.h2-day').classList.remove('red-title');
-      document.querySelector('.day__error').classList.remove('red');
+      errorDayRemove ()
    };
    if(dayInput === 31 &&  monthInput === 4  ) {
-      console.log('error');         
-      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
-      document.querySelector('.day__error').classList.add('red')
-      document.querySelector('.h2-day').classList.add('red-title')
-      document.querySelector('.years__num').innerHTML = '--'
-      document.querySelector('.months__num').innerHTML = '--'
-      document.querySelector('.days__num').innerHTML = '--' 
-      return
+      errorDay ()
+      return birthday = '';
    } else{
-    document.querySelector('.day__error').innerHTML = '';
-    document.querySelector('.h2-day').classList.remove('red-title');
-    document.querySelector('.day__error').classList.remove('red');
+      errorDayRemove ()
    };  
     if(dayInput === 31 &&   monthInput === 6  ) {
-      console.log('error');         
-      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
-      document.querySelector('.day__error').classList.add('red')
-      document.querySelector('.h2-day').classList.add('red-title')
-      document.querySelector('.years__num').innerHTML = '--'
-      document.querySelector('.months__num').innerHTML = '--'
-      document.querySelector('.days__num').innerHTML = '--' 
-      return
+      errorDay () 
+      return birthday = '';
    } else{
-    document.querySelector('.day__error').innerHTML = '';
-    document.querySelector('.h2-day').classList.remove('red-title');
-    document.querySelector('.day__error').classList.remove('red');
+      errorDayRemove ()
    }; 
     if(dayInput === 31 &&   monthInput === 9 ) {
-      console.log('error');         
-      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
-      document.querySelector('.day__error').classList.add('red')
-      document.querySelector('.h2-day').classList.add('red-title')
-      document.querySelector('.years__num').innerHTML = '--'
-      document.querySelector('.months__num').innerHTML = '--'
-      document.querySelector('.days__num').innerHTML = '--' 
-      return
+      errorDay () 
+      return birthday = '';
    } else{
-    document.querySelector('.day__error').innerHTML = '';
-    document.querySelector('.h2-day').classList.remove('red-title');
-    document.querySelector('.day__error').classList.remove('red');
+      errorDayRemove ()
    };  
     if(dayInput === 31 &&   monthInput === 11 ) {
-      console.log('error');         
-      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
-      document.querySelector('.day__error').classList.add('red')
-      document.querySelector('.h2-day').classList.add('red-title')
-      document.querySelector('.years__num').innerHTML = '--'
-      document.querySelector('.months__num').innerHTML = '--'
-      document.querySelector('.days__num').innerHTML = '--' 
-      return
+      errorDay () 
+      return birthday = '';
    } else{
-    document.querySelector('.day__error').innerHTML = '';
-    document.querySelector('.h2-day').classList.remove('red-title');
-    document.querySelector('.day__error').classList.remove('red');
+      errorDayRemove ()
    }; 
       
    
@@ -145,17 +109,10 @@ function r(){
       document.querySelector('.month__error').classList.remove('red');
    };
    if (isNaN(days) == true){
-      document.querySelector('.day__error').innerHTML = 'Must be a valid day';
-      document.querySelector('.day__error').classList.add('red');
-      document.querySelector('.h2-day').classList.add('red-title');
-      document.querySelector('.years__num').innerHTML = '--'
-      document.querySelector('.months__num').innerHTML = '--'
-      document.querySelector('.days__num').innerHTML = '--'
+      errorDay ()
       return
     }else{
-    document.querySelector('.day__error').innerHTML = '';
-    document.querySelector('.h2-day').classList.remove('red-title');
-    document.querySelector('.day__error').classList.remove('red');
+      errorDayRemove ()
  };  
    
     
