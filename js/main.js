@@ -12,17 +12,10 @@ function r(){
    
 
    let birthday = '';
-   
-   if(dayInput > 30 && monthInput === 4 || monthInput === 6 || monthInput === 9 || monthInput === 11)  {
-      console.log('error');         
-      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
-      document.querySelector('.day__error').classList.add('red')
-      document.querySelector('.h2-day').classList.add('red-title')
-      document.querySelector('.years__num').innerHTML = '--'
-      document.querySelector('.months__num').innerHTML = '--'
-      document.querySelector('.days__num').innerHTML = '--' 
-      return
-   } 
+
+   birthday = `${yearInput}-${monthInput}-${dayInput}`;
+   console.log(dayInput ,monthInput, yearInput, birthday );
+      
       if  (dayInput > 29 && monthInput === 2 && (yearInput % 4 === 0 )){
          console.log('error')
          document.querySelector('.day__error').innerHTML = 'Must be a valid date'
@@ -31,8 +24,12 @@ function r(){
          document.querySelector('.years__num').innerHTML = '--'
          document.querySelector('.months__num').innerHTML = '--'
          document.querySelector('.days__num').innerHTML = '--' 
-         return
-   }  
+         return birthday = '';
+   } else{
+      document.querySelector('.day__error').innerHTML = '';
+      document.querySelector('.h2-day').classList.remove('red-title');
+      document.querySelector('.day__error').classList.remove('red');
+   }; 
       if(dayInput > 28 && monthInput == 2 && (yearInput % 4 !== 0 ) ){
          console.log('error')
          document.querySelector('.day__error').innerHTML = 'Must be a valid date'
@@ -41,11 +38,69 @@ function r(){
          document.querySelector('.years__num').innerHTML = '--'
          document.querySelector('.months__num').innerHTML = '--'
          document.querySelector('.days__num').innerHTML = '--'
-         return
-   }else{           
-      birthday = `${yearInput}-${monthInput}-${dayInput}`;
-      console.log(dayInput ,monthInput, yearInput, birthday );
-   }   
+         return birthday = '';
+   } else{
+      document.querySelector('.day__error').innerHTML = '';
+      document.querySelector('.h2-day').classList.remove('red-title');
+      document.querySelector('.day__error').classList.remove('red');
+   };
+   if(dayInput === 31 &&  monthInput === 4  ) {
+      console.log('error');         
+      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
+      document.querySelector('.day__error').classList.add('red')
+      document.querySelector('.h2-day').classList.add('red-title')
+      document.querySelector('.years__num').innerHTML = '--'
+      document.querySelector('.months__num').innerHTML = '--'
+      document.querySelector('.days__num').innerHTML = '--' 
+      return
+   } else{
+    document.querySelector('.day__error').innerHTML = '';
+    document.querySelector('.h2-day').classList.remove('red-title');
+    document.querySelector('.day__error').classList.remove('red');
+   };  
+    if(dayInput === 31 &&   monthInput === 6  ) {
+      console.log('error');         
+      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
+      document.querySelector('.day__error').classList.add('red')
+      document.querySelector('.h2-day').classList.add('red-title')
+      document.querySelector('.years__num').innerHTML = '--'
+      document.querySelector('.months__num').innerHTML = '--'
+      document.querySelector('.days__num').innerHTML = '--' 
+      return
+   } else{
+    document.querySelector('.day__error').innerHTML = '';
+    document.querySelector('.h2-day').classList.remove('red-title');
+    document.querySelector('.day__error').classList.remove('red');
+   }; 
+    if(dayInput === 31 &&   monthInput === 9 ) {
+      console.log('error');         
+      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
+      document.querySelector('.day__error').classList.add('red')
+      document.querySelector('.h2-day').classList.add('red-title')
+      document.querySelector('.years__num').innerHTML = '--'
+      document.querySelector('.months__num').innerHTML = '--'
+      document.querySelector('.days__num').innerHTML = '--' 
+      return
+   } else{
+    document.querySelector('.day__error').innerHTML = '';
+    document.querySelector('.h2-day').classList.remove('red-title');
+    document.querySelector('.day__error').classList.remove('red');
+   };  
+    if(dayInput === 31 &&   monthInput === 11 ) {
+      console.log('error');         
+      document.querySelector('.day__error').innerHTML = 'Must be a valid date'
+      document.querySelector('.day__error').classList.add('red')
+      document.querySelector('.h2-day').classList.add('red-title')
+      document.querySelector('.years__num').innerHTML = '--'
+      document.querySelector('.months__num').innerHTML = '--'
+      document.querySelector('.days__num').innerHTML = '--' 
+      return
+   } else{
+    document.querySelector('.day__error').innerHTML = '';
+    document.querySelector('.h2-day').classList.remove('red-title');
+    document.querySelector('.day__error').classList.remove('red');
+   }; 
+      
    
       function oldOut (input){
       let days = 0;
@@ -70,9 +125,11 @@ function r(){
         document.querySelector('.years__num').innerHTML = '--'
         document.querySelector('.months__num').innerHTML = '--'
         document.querySelector('.days__num').innerHTML = '--'        
-      }else{document.querySelector('.year__error').innerHTML = '';
+      }else{
+      document.querySelector('.year__error').innerHTML = '';
       document.querySelector('.h2-year').classList.remove('red-title');
-      }
+      document.querySelector('.year__error').classList.remove('red');
+      };
      
       if (isNaN(months) == true){
         document.querySelector('.month__error').innerHTML = 'Must be a valid month';
@@ -81,9 +138,12 @@ function r(){
         document.querySelector('.years__num').innerHTML = '--'
         document.querySelector('.months__num').innerHTML = '--'
         document.querySelector('.days__num').innerHTML = '--'
-      }else{document.querySelector('.month__error').innerHTML = '';
+        
+      }else{
+      document.querySelector('.month__error').innerHTML = '';
       document.querySelector('.h2-month').classList.remove('red-title');
-   }
+      document.querySelector('.month__error').classList.remove('red');
+   };
    if (isNaN(days) == true){
       document.querySelector('.day__error').innerHTML = 'Must be a valid day';
       document.querySelector('.day__error').classList.add('red');
@@ -91,9 +151,13 @@ function r(){
       document.querySelector('.years__num').innerHTML = '--'
       document.querySelector('.months__num').innerHTML = '--'
       document.querySelector('.days__num').innerHTML = '--'
-    }else{document.querySelector('.day__error').innerHTML = '';
+      return
+    }else{
+    document.querySelector('.day__error').innerHTML = '';
     document.querySelector('.h2-day').classList.remove('red-title');
- }
+    document.querySelector('.day__error').classList.remove('red');
+ };  
+   
     
    }
    oldOut(birthday);
